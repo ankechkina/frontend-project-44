@@ -5,10 +5,11 @@ import readlineSync from 'readline-sync';
 const isEven = (number) => {
   let correctAnswer;
   if (number % 2 === 0) {
-		 correctAnswer = 'yes';
+    correctAnswer = 'yes';
   } else {
-		 correctAnswer = 'no';
-  } return correctAnswer;
+    correctAnswer = 'no';
+  }
+  return correctAnswer;
 };
 
 function getRandomInt(min, max) {
@@ -30,7 +31,7 @@ const brainEven = () => {
   if (answer === correctAnswer) {
     console.log('Correct!');
   } else {
-	  console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.
+    console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.
 	  Let's try again, ${userName}!`);
   }
   randomNumber = getRandomInt(1, 100);
@@ -40,20 +41,20 @@ const brainEven = () => {
   if (answer === correctAnswer) {
     console.log('Correct!');
   } else {
-	 console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.
+    console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.
 	 Let's try again, ${userName}!`);
   }
 
-	 randomNumber = getRandomInt(1, 100);
-	 console.log(`Question: ${randomNumber}`);
-	 answer = readlineSync.question('Your answer: ');
-	 correctAnswer = isEven(randomNumber);
-	 if (answer === correctAnswer) {
+  randomNumber = getRandomInt(1, 100);
+  console.log(`Question: ${randomNumber}`);
+  answer = readlineSync.question('Your answer: ');
+  correctAnswer = isEven(randomNumber);
+  if (answer === correctAnswer) {
     console.log(`Congratulations, ${userName}!`);
-	 } else {
-		 console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.
+  } else {
+    console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.
 		 Let's try again, ${userName}!`);
-	 }
+  }
 };
 
 brainEven();
