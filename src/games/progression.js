@@ -11,6 +11,7 @@ const getNumbersEnd = (numbersStart, numbersAmount, interval) => {
   }
   return numbersEnd;
 };
+
 const getStringOfNumbers = () => {
   const numbersAmount = getRandomInt(5, 10);
   const numbersStart = getRandomInt(1, 50);
@@ -26,25 +27,28 @@ const getStringOfNumbers = () => {
   wholeStringOfNumbers = wholeStringOfNumbers.trim();
   return [wholeStringOfNumbers, removedNumberPlace];
 };
+
 const getRemovedNumberArray = () => {
   const [wholeStringOfNumbers, removedNumberPlace] = getStringOfNumbers();
   const separator = ' ';
   const separatedNumbers = wholeStringOfNumbers.split(separator);
   const removedNumber = separatedNumbers[removedNumberPlace - 1];
   const removedNumberArray = [];
-  for (const number of separatedNumbers) {
-    if (number === removedNumber) {
+  for (let i = 0; i < separatedNumbers.length; i += 1) {
+    if (separatedNumbers[i] === removedNumber) {
       removedNumberArray.push('..');
     } else {
-      removedNumberArray.push(number);
+      removedNumberArray.push(separatedNumbers[i]);
     }
   }
   return [removedNumberArray, removedNumber];
 };
+
 const generateRound = () => {
   const [removedNumberArray, removedNumber] = getRemovedNumberArray();
   const userQuestion = removedNumberArray.join(' ');
   const correctAnswer = removedNumber;
   return [userQuestion, correctAnswer];
 };
+
 export { rules, generateRound };
