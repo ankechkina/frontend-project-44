@@ -38,11 +38,11 @@ const getRemovedNumberArray = () => {
   const removedNumber = separatedNumbers[removedNumberPlace - 1];
 
   const removedNumberArray = [];
-  for (const number of separatedNumbers) {
-    if (number === removedNumber) {
+  for (let i = 0; i < separatedNumbers.length; i += 1) {
+    if (separatedNumbers[i] === removedNumber) {
       removedNumberArray.push('..');
     } else {
-      removedNumberArray.push(number);
+      removedNumberArray.push(separatedNumbers[i]);
     }
   }
   return [removedNumberArray, removedNumber];
