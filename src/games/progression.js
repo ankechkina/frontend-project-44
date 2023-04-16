@@ -9,7 +9,8 @@ const getNumbersEnd = (numbersStart, numbersAmount, interval) => {
   while (i < numbersAmount) {
     numbersEnd += interval;
     i += 1;
-  } return numbersEnd;
+  }
+  return numbersEnd;
 };
 
 const getStringOfNumbers = () => {
@@ -25,7 +26,8 @@ const getStringOfNumbers = () => {
   while (i <= numbersEnd) {
     wholeStringOfNumbers = `${wholeStringOfNumbers} ${i}`;
     i += interval;
-  } wholeStringOfNumbers = wholeStringOfNumbers.trim();
+  }
+  wholeStringOfNumbers = wholeStringOfNumbers.trim();
   return [wholeStringOfNumbers, removedNumberPlace];
 };
 
@@ -42,7 +44,8 @@ const getRemovedNumberArray = () => {
     } else {
       removedNumberArray.push(number);
     }
-  } return [removedNumberArray, removedNumber];
+  }
+  return [removedNumberArray, removedNumber];
 };
 
 const generateRound = () => {
