@@ -2,7 +2,7 @@
   "name": "@hexlet/code",
   "version": "1.0.0",
   "type": "module",
-  "description": "[![Actions Status](https://github.com/ankechkina/frontend-project-44/workflows/hexlet-check/badge.svg)](https://github.com/ankechkina/frontend-project-44/actions)",
+  "description": "Five simple arithmetic games with maximum of three rounds that require a player's response",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
