@@ -1,4 +1,4 @@
-import { getRandomInt } from '../index.js';
+import { getRandomInt, startGame } from '../index.js';
 
 const rules = 'What is the result of the expression?';
 
@@ -48,4 +48,6 @@ const generateRound = () => {
   return [userQuestion, correctAnswer.toString()];
 };
 
-export { rules, generateRound };
+const startCalcGame = () => startGame(rules, generateRound);
+
+export default startCalcGame;

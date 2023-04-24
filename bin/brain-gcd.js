@@ -1,6 +1,5 @@
 #!/usr/bin/env node
 
-import { rules, generateRound } from '../src/games/gcd.js';
-import { startGame } from '../src/index.js';
+import startGcdGame from '../src/games/gcd.js';
 
-startGame(rules, generateRound);
+startGcdGame();
