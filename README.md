@@ -6,6 +6,11 @@
 
 <a href="https://codeclimate.com/github/ankechkina/frontend-project-44/maintainability"><img src="https://api.codeclimate.com/v1/badges/4c7ec58081567000aea4/maintainability" /></a>
 
+### Setup
+```clone this repository
+npm install
+npm link```
+
 ### brain-even
 <a href="https://asciinema.org/a/sobhiSJTNyy1zogl8heepZbma" target="_blank"><img src="https://asciinema.org/a/sobhiSJTNyy1zogl8heepZbma.svg" /></a>
 
