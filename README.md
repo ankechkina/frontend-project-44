@@ -9,7 +9,8 @@
 ### Setup
 ```clone this repository
 npm install
-npm link```
+npm link
+```
 
 ### brain-even
 <a href="https://asciinema.org/a/sobhiSJTNyy1zogl8heepZbma" target="_blank"><img src="https://asciinema.org/a/sobhiSJTNyy1zogl8heepZbma.svg" /></a>
