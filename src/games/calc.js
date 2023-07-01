@@ -4,8 +4,8 @@ import getRandomInt from '../helpers.js';
 const rules = 'What is the result of the expression?';
 
 const getUserQuestion = () => {
-  const randomNumber1 = getRandomInt(1, 100);
-  const randomNumber2 = getRandomInt(1, 100);
+  const randomNumber1 = getRandomInt();
+  const randomNumber2 = getRandomInt();
   const operators = ['+', '-', '*'];
   const randomOperatorIndex = getRandomInt(0, 2);
   const randomOperator = operators[randomOperatorIndex];

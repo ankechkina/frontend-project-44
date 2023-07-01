@@ -1,4 +1,4 @@
-const getRandomInt = (min, max) => {
+const getRandomInt = (min = 1, max = 100) => {
   let minNumber = min;
   let maxNumber = max;
   minNumber = Math.ceil(minNumber);
