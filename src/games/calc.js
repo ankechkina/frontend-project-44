@@ -3,17 +3,7 @@ import getRandomInt from '../helpers.js';
 
 const rules = 'What is the result of the expression?';
 
-const getUserQuestion = () => {
-  const randomNumber1 = getRandomInt();
-  const randomNumber2 = getRandomInt();
-  const operators = ['+', '-', '*'];
-  const randomOperatorIndex = getRandomInt(0, 2);
-  const randomOperator = operators[randomOperatorIndex];
-  const userQuestion = `${randomNumber1} ${randomOperator} ${randomNumber2}`;
-  return userQuestion;
-};
-
-function calculate(expression) {
+const calculate = (expression) => {
   let operator = '';
   let num1 = '';
   let num2 = '';
@@ -41,9 +31,18 @@ function calculate(expression) {
     default:
       return NaN;
   }
-}
+};
 
 const generateRound = () => {
+  const getUserQuestion = () => {
+    const randomNumber1 = getRandomInt();
+    const randomNumber2 = getRandomInt();
+    const operators = ['+', '-', '*'];
+    const randomOperatorIndex = getRandomInt(0, 2);
+    const randomOperator = operators[randomOperatorIndex];
+    const userQuestion = `${randomNumber1} ${randomOperator} ${randomNumber2}`;
+    return userQuestion;
+  };
   const userQuestion = getUserQuestion();
   const correctAnswer = parseFloat(calculate(userQuestion));
   return [userQuestion, correctAnswer.toString()];
