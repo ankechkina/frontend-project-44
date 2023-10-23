@@ -44,7 +44,7 @@ const generateRound = () => {
     return userQuestion;
   };
   const userQuestion = getUserQuestion();
-  const correctAnswer = parseFloat(calculate(userQuestion));
+  const correctAnswer = calculate(userQuestion);
   return [userQuestion, correctAnswer.toString()];
 };
 
