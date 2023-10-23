@@ -3,11 +3,11 @@ import getRandomInt from '../helpers.js';
 
 const rules = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
-const isPrime = (number) => {
+const isPrime = (num) => {
   let divider = 2;
 
-  while (divider <= number / 2) {
-    if (number % divider === 0) {
+  while (divider <= num / 2) {
+    if (num % divider === 0) {
       return false;
     }
 
