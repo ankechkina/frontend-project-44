@@ -38,7 +38,8 @@ const generateRound = () => {
     const randomNumber1 = getRandomInt();
     const randomNumber2 = getRandomInt();
     const operators = ['+', '-', '*'];
-    const randomOperatorIndex = getRandomInt(0, 2);
+    const operatorsCount = operators.length;
+    const randomOperatorIndex = getRandomInt(0, operatorsCount - 1);
     const randomOperator = operators[randomOperatorIndex];
     const userQuestion = `${randomNumber1} ${randomOperator} ${randomNumber2}`;
     return userQuestion;
