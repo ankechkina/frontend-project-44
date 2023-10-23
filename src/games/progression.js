@@ -3,16 +3,17 @@ import getRandomInt from '../helpers.js';
 
 const rules = 'What number is missing in the progression?';
 
+const getNumbersEnd = (numbersStart, numbersAmount, interval) => {
+  let i = 0;
+  let numbersEnd = numbersStart;
+  while (i < numbersAmount) {
+    numbersEnd += interval;
+    i += 1;
+  }
+  return numbersEnd;
+};
+
 const getStringOfNumbers = () => {
-  const getNumbersEnd = (numbersStart, numbersAmount, interval) => {
-    let i = 0;
-    let numbersEnd = numbersStart;
-    while (i < numbersAmount) {
-      numbersEnd += interval;
-      i += 1;
-    }
-    return numbersEnd;
-  };
   const numbersAmount = getRandomInt(5, 10);
   const numbersStart = getRandomInt(1, 50);
   const interval = getRandomInt(2, 10);
