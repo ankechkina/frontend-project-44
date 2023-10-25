@@ -3,25 +3,25 @@ import getRandomInt from '../helpers.js';
 
 const rules = 'What number is missing in the progression?';
 
-const getNumbersEnd = (numbersStart, numbersAmount, interval) => {
+const getLastNumber = (firstNumber, numbersAmount, interval) => {
   let i = 0;
-  let numbersEnd = numbersStart;
+  let lastNumber = firstNumber;
   while (i < numbersAmount) {
-    numbersEnd += interval;
+    lastNumber += interval;
     i += 1;
   }
-  return numbersEnd;
+  return lastNumber;
 };
 
 const getStringOfNumbers = () => {
   const numbersAmount = getRandomInt(5, 10);
-  const numbersStart = getRandomInt(1, 50);
+  const firstNumber = getRandomInt(1, 50);
   const interval = getRandomInt(2, 10);
-  const numbersEnd = getNumbersEnd(numbersStart, numbersAmount, interval);
+  const lastNumber = getLastNumber(firstNumber, numbersAmount, interval);
   const removedNumberPlace = getRandomInt(1, numbersAmount);
-  let i = numbersStart;
+  let i = firstNumber;
   let wholeStringOfNumbers = '';
-  while (i <= numbersEnd) {
+  while (i <= lastNumber) {
     wholeStringOfNumbers = `${wholeStringOfNumbers} ${i}`;
     i += interval;
   }
