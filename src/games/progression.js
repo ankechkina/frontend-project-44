@@ -13,33 +13,28 @@ const getLastNumber = (firstNumber, numbersAmount, interval) => {
   return lastNumber;
 };
 
-const getStringOfNumbers = () => {
+const getNumbersArray = () => {
   const numbersAmount = getRandomInt(5, 10);
   const firstNumber = getRandomInt(1, 50);
   const interval = getRandomInt(2, 10);
   const lastNumber = getLastNumber(firstNumber, numbersAmount, interval);
   const removedNumberPlace = getRandomInt(1, numbersAmount);
-  let i = firstNumber;
-  let wholeStringOfNumbers = '';
-  while (i <= lastNumber) {
-    wholeStringOfNumbers = `${wholeStringOfNumbers} ${i}`;
-    i += interval;
+  const numbersArray = [];
+  for (let i = firstNumber; i <= lastNumber; i += interval) {
+    numbersArray.push(i);
   }
-  wholeStringOfNumbers = wholeStringOfNumbers.trim();
-  return [wholeStringOfNumbers, removedNumberPlace];
+  return [numbersArray, removedNumberPlace];
 };
 
 const getRemovedNumberArray = () => {
-  const [wholeStringOfNumbers, removedNumberPlace] = getStringOfNumbers();
-  const separator = ' ';
-  const separatedNumbers = wholeStringOfNumbers.split(separator);
-  const removedNumber = separatedNumbers[removedNumberPlace - 1];
+  const [numbersArray, removedNumberPlace] = getNumbersArray();
+  const removedNumber = numbersArray[removedNumberPlace - 1];
   const removedNumberArray = [];
-  for (let i = 0; i < separatedNumbers.length; i += 1) {
-    if (separatedNumbers[i] === removedNumber) {
+  for (let i = 0; i < numbersArray.length; i += 1) {
+    if (numbersArray[i] === removedNumber) {
       removedNumberArray.push('..');
     } else {
-      removedNumberArray.push(separatedNumbers[i]);
+      removedNumberArray.push(numbersArray[i]);
     }
   }
   return [removedNumberArray, removedNumber];
@@ -48,7 +43,7 @@ const getRemovedNumberArray = () => {
 const generateRound = () => {
   const [removedNumberArray, removedNumber] = getRemovedNumberArray();
   const userQuestion = removedNumberArray.join(' ');
-  const correctAnswer = removedNumber;
+  const correctAnswer = removedNumber.toString();
   return [userQuestion, correctAnswer];
 };
 
