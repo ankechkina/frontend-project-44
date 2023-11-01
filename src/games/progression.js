@@ -3,45 +3,25 @@ import getRandomInt from '../helpers.js';
 
 const rules = 'What number is missing in the progression?';
 
-const getLastNumber = (firstNumber, numbersAmount, interval) => {
-  let i = 0;
-  let lastNumber = firstNumber;
-  while (i < numbersAmount) {
-    lastNumber += interval;
-    i += 1;
-  }
-  return lastNumber;
-};
-
-const getNumbersArray = () => {
-  const numbersAmount = getRandomInt(5, 10);
-  const firstNumber = getRandomInt(1, 50);
-  const interval = getRandomInt(2, 10);
-  const lastNumber = getLastNumber(firstNumber, numbersAmount, interval);
-  const removedNumberPlace = getRandomInt(1, numbersAmount);
+const getNumbersArray = (numbersAmount, firstNumber, interval) => {
   const numbersArray = [];
-  for (let i = firstNumber; i <= lastNumber; i += interval) {
-    numbersArray.push(i);
+  let progressionNumber = firstNumber;
+  for (let i = 0; i < numbersAmount; i += 1) {
+    progressionNumber += interval;
+    numbersArray.push(progressionNumber);
   }
-  return [numbersArray, removedNumberPlace];
-};
-
-const getRemovedNumberArray = () => {
-  const [numbersArray, removedNumberPlace] = getNumbersArray();
-  const removedNumber = numbersArray[removedNumberPlace - 1];
-  const removedNumberArray = [];
-  for (let i = 0; i < numbersArray.length; i += 1) {
-    if (numbersArray[i] === removedNumber) {
-      removedNumberArray.push('..');
-    } else {
-      removedNumberArray.push(numbersArray[i]);
-    }
-  }
-  return [removedNumberArray, removedNumber];
+  return numbersArray;
 };
 
 const generateRound = () => {
-  const [removedNumberArray, removedNumber] = getRemovedNumberArray();
+  const numbersAmount = getRandomInt(5, 10);
+  const firstNumber = getRandomInt(1, 50);
+  const interval = getRandomInt(2, 10);
+  const numbersArray = getNumbersArray(numbersAmount, firstNumber, interval);
+  const removedNumberIndex = getRandomInt(0, numbersArray.length - 1);
+  const removedNumber = numbersArray[removedNumberIndex];
+  const removedNumberArray = numbersArray;
+  removedNumberArray[removedNumberIndex] = '..';
   const userQuestion = removedNumberArray.join(' ');
   const correctAnswer = removedNumber.toString();
   return [userQuestion, correctAnswer];
